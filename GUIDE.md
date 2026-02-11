@@ -9,8 +9,8 @@ Quick reference for getting this project running on Arch Linux.
 git clone git@github.com:ddayfinsci-cell/polars-lab.git
 cd polars-lab
 
-# Install uv if not present
-sudo pacman -S uv
+# Install system dependencies
+sudo pacman -S uv visidata python-pyarrow
 
 # Create venv and install dependencies (one command)
 uv sync
@@ -48,6 +48,48 @@ polars-lab/
 │   └── my_analysis/
 │       └── explore.py
 └── GUIDE.md              # This file
+```
+
+## Exploring data with visidata
+
+Visidata (`vd`) is a terminal spreadsheet — browse, sort, filter, and
+aggregate without writing code. Installed system-wide via pacman.
+
+```bash
+# Open a CSV
+vd data/mortgage.csv
+
+# Open parquet (needs python-pyarrow, already installed)
+vd data/mortgage.parquet
+```
+
+### Essential vd keybindings
+
+| Key | Action |
+|---|---|
+| `Arrow keys` / `hjkl` | Navigate |
+| `q` | Quit / back |
+| `Shift+F` | Frequency table for current column |
+| `[` / `]` | Sort ascending / descending by current column |
+| `,` | Select rows matching current cell |
+| `"` | Open new sheet with selected rows |
+| `+` *then* `mean` | Add aggregator to column |
+| `I` | Describe sheet (summary stats for all columns) |
+| `e` | Edit cell |
+| `/` | Search in current column |
+| `Ctrl+S` | Save sheet to file |
+| `z Enter` | Expand current cell (for long values) |
+
+### Quick visidata workflows
+
+```bash
+# Get a feel for the data — open, press I for stats
+vd data/mortgage.csv    # then press I
+
+# Default frequency — navigate to default_time column, press Shift+F
+
+# Filter to defaults — on default_time column, type 1, press ,
+# then press " to open filtered sheet
 ```
 
 ## Getting data in
