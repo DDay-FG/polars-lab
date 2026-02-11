@@ -1,0 +1,7 @@
+[project]
+name = "polars-lab"
+version = "0.1.0"
+description = "Polars learning hub — practicing dataframe operations across a variety of sub-projects"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["polars"]
