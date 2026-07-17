@@ -6,7 +6,7 @@ Quick reference for getting this project running on Arch Linux.
 
 ```bash
 # Clone the repo
-git clone git@github.com:ddayfinsci-cell/polars-lab.git
+git clone https://github.com/DDay-FG/polars-lab.git
 cd polars-lab
 
 # Install system dependencies
